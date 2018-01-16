@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  form(method="post", action="/api/users/register")
+    div
+      label(for="username") User Name
+      input(type="text", name="username", id="username")
+    div
+      label(for="email") Email
+      input(type="text", name="email", id="email")
+    div 
+      label(for="first_name") First Name
+      input(type="text", name="first_name", id="first_name")
+    div 
+      label(for="last_name") Last Name
+      input(type="text", name="last_name", id="last_name")
+    div 
+      label(for="password") Password
+      input(type="password", name="password", id="password")
+    div
+      input(type="submit", value="Submit")
+    
+    a(href="/auth/github" class ="button") 
+      i(class="fab fa-github-square") 
+      | &nbsp;Signup Github

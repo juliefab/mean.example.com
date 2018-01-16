@@ -80,6 +80,7 @@ router.get('/delete/:userId', function(req,res){
 
   var userId = req.params.userId;
   User.remove({'_id':userId}, function(err,removed){
+
     if(err){
       return res.json({success: false, error: err});
     }
@@ -87,6 +88,45 @@ router.get('/delete/:userId', function(req,res){
     return res.json({success: true, status: removed});
 
   });
+
+
+
 });
 
+
+
+
+
+
+// router.get('/delete/:userId', function(req,res){
+//
+//   var userId = req.params.userId;
+//   User.remove({'_id':userId}, function(err,removed){
+//
+//     if(err){
+//       return res.json({success: false, error: err});
+//     }
+//
+//     return res.json({success: true, status: removed});
+//
+//   });
+// });
+
+router.post('/register', function(req,res){
+  var input = req.body;
+  User.register(new User ({
+    username: input.username,
+    email: input.email,
+    first_name: input.first_name,
+    last_name: input.last_name
+
+  }),input.password,function(err, user){
+    if(err){
+      return res.json({success: false, user: req.body, errors: err});
+
+  }
+
+      return res.json({success: true, user: user});
+});
+});
 module.exports = router;
