@@ -3,18 +3,31 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-      
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy", crossorigin="anonymous")  
   body
-    
-    nav 
-      a(href="/") Home
-      |&nbsp;|&nbsp;
-      if session.user.id
-        a(href="/users") Users 
-        |&nbsp;|&nbsp;
-        a(href="/users/logout") Log Out
-      else 
-        a(href="/users/login") Log In
+    ol.breadcrumb
+      li.breadcrumb-item
+        a(href='/') Home
+          
+        if session.user.id
+          |&nbsp;|&nbsp;
+          a(href="/users") Users
+          |&nbsp;|&nbsp;
+          a(href="/posts") Posts 
+          |&nbsp;|&nbsp;
+          a(href="/users/logout") Log Out
+        else 
+          |&nbsp;|&nbsp;
+          a(href="/users/login") Log In
+    //- nav(aria-label='breadcrumb') 
+    //-   a(href="/") Home
+    //-   |&nbsp;|&nbsp;
+    //-   if session.user.id
+    //-     a(href="/users") Users 
+    //-     |&nbsp;|&nbsp;
+    //-     a(href="/users/logout") Log Out
+    //-   else 
+    //-     a(href="/users/login") Log In
     
     main
       block content

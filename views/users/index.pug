@@ -3,12 +3,12 @@ extends ../layout
 block content
   h1= title
 
-  a.button(href="#users" onclick="viewIndex()") All Users
+  a.button(href="#users" onclick="viewIndex()" class="btn btn-secondary") All Users
   span &nbsp;&nbsp;
-  a.button(href="#create" onclick="createUser()") Create
+  a.button(href="#create" onclick="createUser()" class="btn btn-secondary") Create
   //- span &nbsp;&nbsp;
   //- a.button(href="#delete" onclick="delete()") Delete
-  
+  span &nbsp;&nbsp;
   div#app
     
   script(src='/javascripts/user_app.js')
