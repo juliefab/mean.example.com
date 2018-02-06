@@ -1,5 +1,5 @@
 function viewIndex(){
-  var url = 'http://localhost:3000/api/users';
+  var url = 'https://j-finch.com/api/users';
 
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url);
