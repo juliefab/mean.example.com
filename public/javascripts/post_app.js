@@ -1,5 +1,5 @@
 function viewIndex(){
-  var url = 'http://localhost:3000/api/posts';
+  var url = 'https://j-finch.com/api/posts';
 
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url);
@@ -46,7 +46,7 @@ function viewIndex(){
 
 function viewPost(postId){
 
-  var url = 'http://localhost:3000/api/posts/view/' + postId;
+  var url = 'https://j-finch.com/api/posts/view/' + postId;
 
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url);
@@ -110,7 +110,7 @@ function viewPost(postId){
       e.preventDefault();
 
       formData = new FormData(editPost);
-      var url = 'http://localhost:3000/api/posts/edit';
+      var url = 'https://j-finch.com/api/posts/edit';
 
       var xhr = new XMLHttpRequest();
       xhr.open('POST', url);
@@ -179,7 +179,7 @@ function createPost(){
     e.preventDefault();
 
     formData = new FormData(createPost);
-    var url = 'http://localhost:3000/api/posts/create';
+    var url = 'https://j-finch.com/api/posts/create';
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
@@ -211,7 +211,7 @@ function deletePost(postId){
 
   if (window.confirm("Are you sure you want to delete this post?")) {
 
-    var url = 'http://localhost:3000/api/posts/delete/' + postId;
+    var url = 'https://j-finch.com/api/posts/delete/' + postId;
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url);
