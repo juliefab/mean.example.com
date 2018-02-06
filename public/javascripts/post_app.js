@@ -41,7 +41,7 @@ function viewIndex(){
         <tbody>${rows}</tbody>
       </table>`;
   }
-}
+
 
 
 function viewPost(postId){
