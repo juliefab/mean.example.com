@@ -25,7 +25,7 @@ var User = require('./models/user');
 
 //Connect to MongoDB
 // mongoose.connect('mongodb://localhost/bootcamp');
- mongoose.connect(config.js);
+ mongoose.connect(config.mongodb);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
