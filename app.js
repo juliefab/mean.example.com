@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var helmet = require('helmet');
 var config = require('../config.js');
 
 var mongoose = require('mongoose');
@@ -20,6 +20,7 @@ var apiUsers = require('./routes/api/users');
 var apiPosts = require('./routes/api/posts');
 
 var app = express();
+app.use(helmet());
 
 var User = require('./models/user');
 
@@ -50,9 +51,8 @@ app.use(require('express-session')({
   cookie: {
     path: '/',
     domain: config.cookie.domain,
-    //domain: 'localhost',
-    //httpOnly: true,
-    //secure: true,
+    httpOnly: true,
+    secure: true,
     maxAge: 1000 * 60 * 24 // 24 hours
   }
 }));
