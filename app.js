@@ -21,16 +21,19 @@ var apiUsers = require('./routes/api/users');
 var apiPosts = require('./routes/api/posts');
 
 var app = express();
-//hardens the server
-app.use(helmet());
-//say yes to the compress
-app.use(compression());
+
 
 var User = require('./models/user');
 
 //Connect to MongoDB
 // mongoose.connect('mongodb://localhost/bootcamp');
  mongoose.connect(config.mongodb);
+
+ //hardens the server
+ app.use(helmet());
+ //say yes to the compress
+ app.use(compression());
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
