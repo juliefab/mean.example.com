@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
-var helmet = require('compression');
+var compression = require('compression');
 var config = require('../config.js');
 
 var mongoose = require('mongoose');
