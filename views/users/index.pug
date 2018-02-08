@@ -1,8 +1,14 @@
 extends ../layout
 
 block content
+  h1= title
 
-  app-root
-  script(type='text/javascript', src='dist/inline.1c3ba1c36d9bee9596ea.bundle.js')
-  script(type='text/javascript', src='dist/polyfills.f20484b2fa4642e0dca8.bundle.js')
-  script(type='text/javascript', src='dist/main.53eb0d6e96bd7bb9a12f.bundle.js')
+  a.button(href="#users" onclick="viewIndex()" class="btn btn-secondary") All Users
+  span &nbsp;&nbsp;
+  a.button(href="#create" onclick="createUser()" class="btn btn-secondary") Create
+  //- span &nbsp;&nbsp;
+  //- a.button(href="#delete" onclick="delete()") Delete
+  span &nbsp;&nbsp;
+  div#app
+    
+  script(src='/javascripts/user_app.js')

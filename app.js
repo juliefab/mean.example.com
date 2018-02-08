@@ -21,6 +21,7 @@ var posts = require('./routes/posts');
 var auth = require('./routes/auth');
 var apiUsers = require('./routes/api/users');
 var apiPosts = require('./routes/api/posts');
+var cms = require('./routes/cms');
 
 var app = express();
 
@@ -216,6 +217,7 @@ app.use('/posts', posts);
 app.use('/auth', auth);
 app.use('/api/users', apiUsers);
 app.use('/api/posts', apiPosts);
+app.use('/cms', cms);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
