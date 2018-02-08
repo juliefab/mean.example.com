@@ -6,7 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
 var compression = require('compression');
-var config = require('../config.js');
+
+
+
 
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -25,9 +27,18 @@ var app = express();
 
 var User = require('./models/user');
 
-//Connect to MongoDB
-// mongoose.connect('mongodb://localhost/bootcamp');
- mongoose.connect(config.mongodb);
+
+
+
+ if(process.env.NODE_ENV==='production'){
+   var config = require('../config');
+ }else{
+   var config = require('../config.dev');
+ }
+
+ //Connect to MongoDB
+ mongoose.connect('mongodb://localhost/bootcamp');
+  // mongoose.connect(config.mongodb);
 
  //hardens the server
  app.use(helmet());
@@ -161,6 +172,8 @@ app.use(function(req, res, next){
 });
 
 app.use(function(req,res,next){
+
+ // return next();
 
   let whitelist = [
     '/',

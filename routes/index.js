@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Running with Pm2 ', name: 'Julie'});
+  res.render('index', { title: 'J-Finch.com ', name: 'Julie'});
 });
 
 //crash the server for pm2 testing
