@@ -37,8 +37,8 @@ var User = require('./models/user');
  }
 
  //Connect to MongoDB
- mongoose.connect('mongodb://localhost/bootcamp');
-  // mongoose.connect(config.mongodb);
+ // mongoose.connect('mongodb://localhost/bootcamp');
+  mongoose.connect(config.mongodb);
 
  //hardens the server
  app.use(helmet());
