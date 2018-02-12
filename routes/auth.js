@@ -9,7 +9,7 @@ var express = require('express'),
      passport.authenticate('github', {'failureRedirect':'/'}),
    function(req, res){
      req.session.user= req.user;
-     return res.redirect('/users');
+     return res.redirect('/');
    }
  );
 
