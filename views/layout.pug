@@ -1,18 +1,30 @@
 doctype html
-html
+html(lang="en")
+  
   head
+    meta(charset='utf-8')
     base(href="/")
     title= title
+    
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+  
+    link(rel='stylesheet', href='/css/main.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy", crossorigin="anonymous")  
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")
+    
     link(href='dist/styles.9c0ad738f18adc3d19ed.bundle.css', rel='stylesheet')
+    script(defer, src="https://use.fontawesome.com/releases/v5.0.4/js/all.js")
+    link(href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/pulse/bootstrap.min.css", rel="stylesheet", integrity="sha384-Tt49/uH7xRJMCIU5qH2HEeWNZLx4BKZwYN0H7NJ2jo9v732hZJ7yHl0xUu2Lkt04", crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js", integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D", crossorigin="anonymous")
+    script(src='http://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
   body
     
     ol.breadcrumb
       li.breadcrumb-item
-        a(href='/') Home
-          
+        a(href='/')
+          i.fas.fa-home
+          a(href='/')  Home
         if session.user.id
           |&nbsp;|&nbsp;
           //- a(href="/users") Users
@@ -24,7 +36,9 @@ html
           a(href="/users/logout") Log Out
         else 
           |&nbsp;|&nbsp;
-          a(href="/users/login") Log In
+        a(href="/users/login")
+          i.fas.fa-sign-in-alt
+          a(href="/users/login")  Log In
     //- nav(aria-label='breadcrumb') 
     //-   a(href="/") Home
     //-   |&nbsp;|&nbsp;
@@ -37,5 +51,10 @@ html
     
     main
       block content
+
+
+
       
-    script(defer, src="https://use.fontawesome.com/releases/v5.0.4/js/all.js")
+        
+    
+    

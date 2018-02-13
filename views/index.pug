@@ -3,5 +3,30 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-
-  p My name is #{name}
+  //- .heading
+  //-             h1 #{firstName} #{lastName}
+  //-             h3 #[a(href="#") designopod.com] 
+  //-             h3 #[a(href="#") finch.julie@gmail.com | 607.379.5733 | jfinch1@artic.edu]
+  //- <hr>
+  
+  .card.border-primary.mb-3(style='max-width: 20rem;')
+    .card-header Title
+    .card-body.text-primary
+      h4.card-title 
+        h3 Hello
+        p My name is #{name}
+        img.className#IdName(src="https://secure.gravatar.com/avatar/56ee8085b411424990d09ef2965ac152?size=150" alt="gravatar")
+        p.card-text
+        | Information
+        .image-block
+          
+  .card.border-primary.mb-3(style='max-width: 20rem;')
+    .card-header Title
+    .card-body.text-primary
+      h4.card-title 
+        h3 Hello
+        p.card-text
+        | Information
+  
+    
+            
