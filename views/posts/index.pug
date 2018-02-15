@@ -1,14 +1,8 @@
 extends ../layout
 
 block content
-  h1= title
-
-  a.button(href="#users" onclick="viewIndex()") All Posts
-  span &nbsp;&nbsp;
-  a.button(href="#create" onclick="createPost()") Create
-  //- span &nbsp;&nbsp;
-  //- a.button(href="#delete" onclick="delete()") Delete
-  
-  div#app
-    
-  script(src='/javascripts/post_app.js')
+  ul
+    each val, index in posts  
+      li
+        a(href='/posts/view/' + val.slug)= val.title 
+        
